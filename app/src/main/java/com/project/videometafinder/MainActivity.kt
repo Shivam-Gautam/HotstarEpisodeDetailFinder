@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     // Default URL for quick testing
     private val DEFAULT_HOTSTAR_URL = "https://www.hotstar.com/in/shows/house/1971003083/occams-razor/1971036174/watch"
 
-    // IMPORTANT: Hardcoding this token is a security risk if the code is shared publicly.
-    private val HS_USER_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IiIsImF1ZCI6InVtX2FjY2VzcyIsImV4cCI6MTc1ODYwODQzNCwiaWF0IjoxNzU4NTIyMDM0LCJpc3MiOiJUUyIsImp0aSI6IjI4OGM4YWVlYjRhMTQ5YjU4YTk4MGIyNjc4MTdmZmZlIiwic3ViIjoie1wiaElkXCI6XCJiZTA0NzI3NTg3ZmI0NzNmYmI3NDEzODRhZDRhOWIzZlwiLFwicElkXCI6XCIwNTAyZGZhMGQ1NmE0ZmEwOGExZDA5MTVjOWE1YTlhN1wiLFwiZHdIaWRcIjpcIjU5ODEzZjQzMjFlM2I3ZGJkNGNkZmFhZmM5ODZmN2RiM2FlMWFlNmVlZDQ5OWJiZTkzODU0MDQzNjNmZTk5ZGZcIixcImR3UGlkXCI6XCJjZmE0NGVmMmI4MDhhZTMyN2Y5NTRjNjNmNjQ5MDk0ZTA1YTY2MjIyMzc3ZmQxN2MwOGFkODczMjM1ODFlM2UyXCIsXCJvbGRIaWRcIjpcImJlMDQ3Mjc1ODdmYjQ3M2ZiYjc0MTM4NGFkNGE5YjNmXCIsXCJvbGRQaWRcIjpcIjA1MDJkZmEwZDU2YTRmYTA4YTFkMDkxNWM5YTVhOWE3XCIsXCJpc1BpaVVzZXJNaWdyYXRlZFwiOmZhbHNlLFwibmFtZVwiOlwiU2hpdmFtXCIsXCJwaG9uZVwiOlwiODg2Njc3NDQxOVwiLFwiaXBcIjpcIjI0MDE6NDkwMDoxY2I4OjYxOmJkOWE6MjdiMjo1ZjlhOjllZDlcIixcImNvdW50cnlDb2RlXCI6XCJpblwiLFwiY3VzdG9tZXJUeXBlXCI6XCJudVwiLFwidHlwZVwiOlwicGhvbmVcIixcImlzRW1haWxWZXJpZmllZFwiOmZhbHNlLFwiaXNQaG9uZVZlcmlmaWVkXCI6dHJ1ZSxcImRldmljZUlkXCI6XCI1ZTc0NC03MGRjM2UtNjM0NTkyLTZkZGM4OVwiLFwicHJvZmlsZVwiOlwiQURVTFRcIixcInZlcnNpb25cIjpcInYyXCIsXCJzdWJzY3JpcHRpb25zXCI6e1wiaW5cIjp7XCJIb3RzdGFyU3VwZXJcIjp7XCJzdGF0dXNcIjpcIlNcIixcImV4cGlyeVwiOlwiMjAyNS0xMC0xOVQxNzoxNjoyOS4wMDBaXCIsXCJzaG93QWRzXCI6XCIxXCIsXCJjbnRcIjpcIjFcIn19fSxcImVudFwiOlwiQ3UwQkNnVUtBd29CQUJMakFSSUhZVzVrY205cFpCSURhVzl6RWdOM1pXSVNDV0Z1WkhKdmFXUjBkaElHWm1seVpYUjJFZ2RoY0hCc1pYUjJFZ1J0ZDJWaUVnZDBhWHBsYm5SMkVnVjNaV0p2Y3hJR2FtbHZjM1JpRWdSeWIydDFFZ2RxYVc4dGJIbG1FZ3BqYUhKdmJXVmpZWE4wRWdSMGRtOXpFZ1J3WTNSMkVnTnFhVzhTQm10bGNHeGxjaElFZUdKdmVCSUxjR3hoZVhOMFlYUnBiMjRTREdwcGIzQm9iMjVsYkdsMFpSSU5abVZoZEhWeVpXMXZZbWxzWlJvQ2MyUWFBbWhrR2dObWFHUWlBM05rY2lvR2MzUmxjbVZ2S2doa2IyeGllVFV1TVNvS1pHOXNZbmxCZEcxdmMxZ0JDcjBCQ2dVS0F3b0JCUkt6QVJJSFlXNWtjbTlwWkJJRGFXOXpFZ04zWldJU0NXRnVaSEp2YVdSMGRoSUdabWx5WlhSMkVnZGhjSEJzWlhSMkVnUnRkMlZpRWdkMGFYcGxiblIyRWdWM1pXSnZjeElHYW1sdmMzUmlFZ1J5YjJ0MUVnZHFhVzh0YkhsbUVncGphSEp2YldWallYTjBFZ1IwZG05ekVnUndZM1IyRWdOcWFXOFNCbXRsY0d4bGNob0NjMlFhQW1oa0dnTm1hR1FpQTNOa2Npb0djM1JsY21WdktnaGtiMnhpZVRVdU1Tb0taRzlzWW5sQmRHMXZjMWdCQ2cwU0N3Z0NPQUpBQVZDNENGZ0JDaUlLR2dvSUlnWm1hWEpsZEhZS0RoSUZOVFU0TXpZU0JUWTBNRFE1RWdRNFpGZ0JFbmdJQVJESSsrUHJuek1hUlFvYVNHOTBjM1JoY2xOMWNHVnlMa2xPTGpOTmIyNTBhQzR5T1RrU0RFaHZkSE4wWVhKVGRYQmxjaG9FVTJWc1ppREk4N1Q0NURJb3lQdmo2NTh6TUFZNEEwRFNIeWdCTUFFNklBb2NTRzkwYzNSaGNsQnlaVzFwZFcwdVNVNHVNMDF2Ym5Sb0xqUTVPUkFCU0FFPVwiLFwiaXNzdWVkQXRcIjoxNzU4NTIyMDM0MDQ2LFwibWF0dXJpdHlMZXZlbFwiOlwiQVwiLFwiZHBpZFwiOlwiMDUwMmRmYTBkNTZhNGZhMDhhMWQwOTE1YzlhNWE5YTdcIixcInN0XCI6MSxcImRhdGFcIjpcIkNnUUlBQklBQ2dRSUFDb0FDZ1FJQURvQUNoSUlBQ0lPZ0FFV2lBRUJrQUhBNnVlZXdEQUtMZ2dBUWlvS0tFSmtaakJoWkRaa01UbGpPVEEwTkRVNVltSmlNemt3WlRRNFpqRmpPREV6TWpKb1puTk9Sbk1LQkFnQU1nQT1cIn0iLCJ2ZXJzaW9uIjoiMV8wIn0.kZRRdLZe7gYwvQ_PzVepUIvHhQRxDkkpSjAG0DlhyjE"
+    // IMPORTANT: Replace with your actual token. Leaving it as a placeholder will likely cause 401 Unauthorized errors.
+    private val HS_USER_TOKEN = "YOUR_HS_USER_TOKEN_PLACEHOLDER" 
     private val USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
     private val HS_DEVICE_ID = "5e744-70dc3e-634592-6ddc89"
     private val HS_CLIENT = "platform:web;app_version:25.09.11.1;browser:Chrome;schema_version:0.0.1556;os:Mac OS;os_version:10.15.7;browser_version:140;network_data:4g"
@@ -79,8 +79,12 @@ class MainActivity : AppCompatActivity() {
                 .header("x-hs-is-retry", "false")
                 .header("x-hs-retry-count", "0")
             
-            // Only add the token if it's not the placeholder (it is not a placeholder now)
-            requestBuilder.header("x-hs-usertoken", HS_USER_TOKEN)
+            // Only add the token if it's not the placeholder
+            if (HS_USER_TOKEN != "YOUR_HS_USER_TOKEN_PLACEHOLDER") {
+                requestBuilder.header("x-hs-usertoken", HS_USER_TOKEN)
+            } else {
+                Log.w("MainActivity", "HS_USER_TOKEN is a placeholder. API calls may fail or be rate-limited.")
+            }
             
             chain.proceed(requestBuilder.build())
         }
