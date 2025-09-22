@@ -22,52 +22,33 @@
         android:layout_marginBottom="24dp"/>
 
     <TextView
-        android:id="@+id/contentIdLabelTextView"
+        android:id="@+id/urlLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Episode Content ID:"
+        android:text="Hotstar Episode URL:"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"/>
 
     <EditText
-        android:id="@+id/contentIdEditText"
+        android:id="@+id/hotstarUrlEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter episode content ID"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/contentIdLabelTextView"
+        android:hint="Enter full Hotstar episode URL"
+        android:inputType="textUri"
+        app:layout_constraintTop_toBottomOf="@+id/urlLabelTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fetchButton"
         android:layout_marginEnd="8dp"/>
 
-    <TextView
-        android:id="@+id/searchQueryLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Series Name (for search context):"
-        app:layout_constraintTop_toBottomOf="@+id/contentIdEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <EditText
-        android:id="@+id/searchQueryEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter series name"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/searchQueryLabelTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/contentIdEditText" />
-
     <Button
         android:id="@+id/fetchButton"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content" 
         android:text="Fetch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/contentIdEditText"
-        app:layout_constraintBottom_toBottomOf="@+id/searchQueryEditText"
+        app:layout_constraintTop_toTopOf="@+id/hotstarUrlEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/hotstarUrlEditText"
         android:backgroundTint="@color/material_dynamic_primary40"
         android:textColor="@color/material_dynamic_primary95"
         android:layout_marginStart="8dp"/>
@@ -78,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintTop_toBottomOf="@+id/searchQueryEditText"
+        app:layout_constraintTop_toBottomOf="@+id/hotstarUrlEditText" 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Series &amp; Episode Title" />

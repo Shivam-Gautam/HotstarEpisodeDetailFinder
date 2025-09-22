@@ -89,5 +89,3 @@ Hotstar Episode Finder is a simple Android application that allows users to fetc
 *   **Data Availability:** The presence and format of specific details like duration or season/episode tags can vary in the API response.
 
 ---
-
-*This README was generated with assistance from an AI tool.*
